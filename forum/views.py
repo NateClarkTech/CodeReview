@@ -21,9 +21,9 @@ def threads(request):
 
 def thread(request, id):
     if request.user.is_authenticated:
-        thread = get_object_or_404(Thread, pk=id)
+        threads = Thread.objects.all()
 
-        return render(request, "thread.html", {"thread": thread})
+        return render(request, "thread.html", {"thread": threads})
     
     else:   
         return render(request, "login_register.html")
