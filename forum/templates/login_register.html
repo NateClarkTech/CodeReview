@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Login/Register{% endblock %}
+
+{% block content %}
+<div>
+    <button class="btn btn-primary text-black"><a  href="{% url 'login' %}">Login</a></button>
+    <button class="btn btn-primary text-black"><a href="{% url 'register' %}">Register</a></button>
+</div>
+{% endblock %}

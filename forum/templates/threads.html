@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Threads{% endblock %}
+
+{% block content %}
+    <h2>Threads</h2>
+
+    <p>add button to make new threads</p>
+
+    <ul>
+        {% if threads %}
+            {% for thread in threads %}
+                <li>
+                    <a href="{% url 'thread' thread.id %}">{{ thread.title }}</a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p>No threads found.</p>
+        {% endif %}
+    </ul>
+{% endblock %}
