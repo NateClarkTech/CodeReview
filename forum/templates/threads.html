@@ -5,15 +5,20 @@
 {% block content %}
     <h2>Threads</h2>
 
+    <!-- Ran out of time but I was gonna add a button create a new thread -->
     <p>add button to make new threads</p>
 
     <ul>
+        <!-- If there are any threads, loop through and display each one.
+             Threads are a button with a reference to their id so when they are 
+             clicked it goes to the page with all the comments on that thread -->
         {% if threads %}
             {% for thread in threads %}
                 <li>
                     <a href="{% url 'thread' thread.id %}">{{ thread.title }}</a>
                 </li>
             {% endfor %}
+        <!-- If there are no threads, display a message -->
         {% else %}
             <p>No threads found.</p>
         {% endif %}

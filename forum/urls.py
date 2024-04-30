@@ -19,6 +19,17 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+"""
+blank url takes user to registration/login page if not logged in
+else display all threads
+
+register to make new user
+login to login
+
+<int:id>/ takes user to thread with that id
+
+"""
+
 urlpatterns = [
     path("", views.threads, name='threads'),
     path("<int:id>/", views.thread, name='thread'),

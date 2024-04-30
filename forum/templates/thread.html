@@ -4,28 +4,27 @@
 
 {% block content %}
 
+    <!-- display title  -->
     <h2>{{ thread.title }}</h2>
 
-    <p>{{ thread.content }}</p>
+    <p>{{ thread.creator }}</p>
 
     <h3>Comments</h3>
 
     <ul>
+        <!-- If there are any comments on the thread, display them -->
         {% if comments %}
+            <!-- Loop through each comment and display it -->
             {% for comment in comments %}
                 <li>{{ comment.content }}</li>
             {% endfor %}
         {% else %}
+            <!-- If there are no comments, display a message -->
             <p>No comments found.</p>
         {% endif %}
     </ul>
 
-    <h3>Add a comment</h3>
-
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Add comment</button>
-    </form>
+    <!-- Add a comment -->
+    <h3>button to create new comments</h3>
 
 {% endblock %}

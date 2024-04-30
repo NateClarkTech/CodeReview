@@ -3,6 +3,9 @@
 {% block title %}Login/Register{% endblock %}
 
 {% block content %}
+
+<!-- login and register button, not sure why the text is not black when looking at the page.
+     As a result the text is basiclly unreadable -->
 <div>
     <button class="btn btn-primary text-black"><a  href="{% url 'login' %}">Login</a></button>
     <button class="btn btn-primary text-black"><a href="{% url 'register' %}">Register</a></button>
